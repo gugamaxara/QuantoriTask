@@ -35,12 +35,7 @@ class Trie:
             pCrawl = pCrawl.children[index]
         return pCrawl != None and pCrawl.isEndOfWord
 
-
-def main():
-
-    N = int(input())
-    words = list(input().split(" "))
-    x = [list(input().split(" ")) for y in range(N)]
+def findWords(N, words, x):
     match = set()
 
     t = Trie()
@@ -87,6 +82,15 @@ def main():
                 if t.search(sum8):
                     match.add(sum8)
     print(match)
+
+
+def main():
+
+    N = int(input())
+    words = list(input().split(" "))
+    x = [list(input().split(" ")) for y in range(N)]
+    findWords(N, words, x)
+
 
 if __name__ == '__main__':
     start_time = time.time()
